@@ -6,12 +6,11 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
-# TODO(developer): Update and un-comment below lines
 project_id=os.getenv("CLOUD_PROJECT_ID")
 location=os.getenv("CLOUD_PROJECT_LOCATION")
 vertexai.init(project=project_id, location=location)
-model = GenerativeModel(model_name="gemini-1.0-pro-002")
-chat = model.start_chat()
+model=GenerativeModel(model_name="gemini-1.0-pro-002")
+chat=model.start_chat()
 
 def get_chat_response(chat: ChatSession, prompt: str) -> str:
     text_response = []
